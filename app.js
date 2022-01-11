@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let 
-        days = document.querySelector('.end_time');
-        str = days.innerHTML,
-        regexp = /\d+/g,
-        matchAll = str.matchAll(regexp),
-        startDate = (Array.from(matchAll)),
-        s2tartDate = [];
-        days.remove()
-      startDate.forEach(function(item) {
-        s2tartDate.push(item[0]);
-      });
-    const deadline = new Date(...startDate);
+  let 
+      days = document.querySelector('.end_time');
+      str = days.innerHTML,
+      regexp = /\d+/g,
+      matchAll = str.matchAll(regexp),
+      startDate = (Array.from(matchAll)),
+      s2tartDate = [];
+      days.remove()
+    startDate.forEach(function(item, i) {    
+      startDate.push(item[0]);
+    });
+      startDate[1]--;
+
+  const deadline = new Date(...startDate);
     // id таймера
     let timerId = null;
     // склонение числительных
